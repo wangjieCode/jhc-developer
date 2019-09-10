@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <router />
-		<router-view />
+    <el-container>
+      <el-header class="header">
+        <router />
+      </el-header>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -16,5 +22,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+#app {
+  width: 1200px;
+  margin: 0 auto;
+}
 </style>
