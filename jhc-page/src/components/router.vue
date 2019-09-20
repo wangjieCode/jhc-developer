@@ -34,10 +34,10 @@ import resistered from './user/registered';
 import login from './user/login';
 
 export default {
-	components:{
-		resistered,
-		login
-	}
+  components: {
+    resistered,
+    login,
+  },
 };
 </script>
 <style lang="scss">

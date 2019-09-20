@@ -21,12 +21,12 @@ export default new Router({
     path: '/document',
     name: 'document',
     component: () => import('./views/document.vue'),
-	},
-	{
+  },
+  {
 	  path: '/registered',
 	  name: 'registered',
 	  component: () => import('./components/user/registered.vue'),
-	},
+  },
   {
     path: '/',
     redirect: {

@@ -1,20 +1,20 @@
-const connect = require('./connect');
+// const connect = require('./connect');
+const { writeData,readDatabase } = require('./daoBase');
 
-function logon(username,password,success) {
-
+function logon(username,password,success,fail) {
     const sql = `insert into user (usename,password) values (?,?)`;
     const parms = [username,password];
-    const link = connect.createConnect()
-    link.connect();
-    link.query(sql,parms,function (err,result) {
-        if(!err){
-            success(result)
-        }else {
-            console.log(err)
-        }
-    })
-    link.end();
+    writeData(sql,username,password).then( result => success(result) )
+        .catch( err => fail(err) )
 }
+// logon("xiaoqiangmmp",'122342');
+function login(username,success,fail) {
+    const sql = `select password from user where usename = ?`;
+    readDatabase(sql,username).then( result => success(result) )
+        .catch( err => console.error(err) )
+}
+
 module.exports = {
-    logon
-}
+    logon,
+    login
+};

@@ -12,7 +12,8 @@ app.all('*', function(req, res, next) {
 	// Access-Control-Allow-Headers in preflight response.
 	next();
 });
-app.post('/logon',loader.get('logon'))
+app.post('/logon',loader.get('logon'));
+app.post('/login',loader.get('login'));
 app.listen(90,function () {
-	console.log("服务已启动")
+	console.log("服务已启动");
 });
