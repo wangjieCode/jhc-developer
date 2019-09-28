@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-button type="text" @click="dialogFormVisible = true">登陆</el-button>
-    <el-dialog title="登陆" :visible.sync="dialogFormVisible">
+    <el-dialog title="登陆" :visible.sync="mmpthis.$store.state.dialogFormVisible">
       <jhc-from :user="user" :fun="login" target="登陆" />
     </el-dialog>
   </div>
@@ -13,33 +13,39 @@ import jhcFrom from './jhcFrom';
 export default {
   data() {
     return {
-			 dialogFormVisible: false,
+			mmpthis: this,
+			 dialogFormVisible: this.$store.state.dialogFormVisible,
 			 user: {
         userName: '',
         password: '',
       },
     };
 	},
-	methods: {
-		login(){
+	created(){
+		console.log(this.$store.state.dialogFormVisible)
+	},
+  methods: {
+		click(){
+			this.$store.state.dialogFormVisible
+		},
+    login() {
       const { password, userName } = this.user;
 
-			this.setCookie(userName)
-			axios
+      this.setCookie(userName);
+      axios
         .post('/login', {
           userName,
           password,
         })
         .then(e => console.log(e))
         .catch(err => console.log(err));
-		},
-		setCookie(user){
-			document.cookie = `login=${user};expires=Sun Apr 29 2020 14:27:56 GMT+0800 (中国标准时间)`;
-		}
-
-	},
+    },
+    setCookie(user) {
+      document.cookie = `login=${user};expires=Sun Apr 29 2020 14:27:56 GMT+0800 (中国标准时间)`;
+    },
+  },
   components: {
-		jhcFrom
+    jhcFrom,
   },
 };
 </script>

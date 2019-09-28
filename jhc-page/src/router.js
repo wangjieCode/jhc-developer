@@ -20,18 +20,33 @@ export default new Router({
   {
     path: '/document',
     name: 'document',
-    component: () => import('./views/document.vue'),
+		component: () => import('./views/document.vue'),
+		redirect: '/document/interface',
+    children: [{
+      path: 'interface',
+      name: 'interface',
+      component: () => import('./components/interface/interface.vue'),
+    }],
   },
   {
-	  path: '/registered',
-	  name: 'registered',
-	  component: () => import('./components/user/registered.vue'),
-  },
+    path: '/registered',
+    name: 'registered',
+    component: () => import('./components/user/registered.vue'),
+	},
+	{
+		path: '/notFound',
+		name: 'notFound',
+		component: () => import('./views/notFound.vue'),
+	},
   {
-    path: '/',
-    redirect: {
-      name: 'home',
-    },
+    path: '*',
+    redirect:function (to) {
+			if(to.path === '/'){
+				return '/home';
+			}else{
+				return '/notFound';
+			}
+    }
   },
   ],
 });

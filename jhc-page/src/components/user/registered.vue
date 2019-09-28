@@ -9,6 +9,7 @@
 
 <script>
 import jhcFrom from './jhcFrom';
+
 export default {
   data() {
     return {
@@ -22,19 +23,19 @@ export default {
     };
   },
   methods: {
-    fun(){
-			const { password, userName } = this.user;
-			axios
+    fun() {
+      const { password, userName } = this.user;
+      axios
         .post('/logon', {
           userName,
           password,
         })
         .then(e => console.log(e))
         .catch(err => console.log(err));
-		}
-	},
-	components: {
-		jhcFrom
+    },
+  },
+  components: {
+    jhcFrom,
   },
 };
 </script>

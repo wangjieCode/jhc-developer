@@ -35,22 +35,22 @@
 </template>
 <script>
 export default {
-	props:["user",'fun','target'],
+  props: ['user', 'fun', 'target'],
   data() {
     return {
-      
+
     };
   },
   methods: {
     submitForm(formName) {
-			this.$refs[formName].validate()
-			.then( res => {
-				this.fun()
-			})
+      this.$refs[formName].validate()
+        .then((res) => {
+          this.fun();
+        });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
-    }
-  }
+    },
+  },
 };
 </script>

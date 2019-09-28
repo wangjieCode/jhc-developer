@@ -1,5 +1,4 @@
 const userMap = new Map();
-const url = require("url");
 const userDao = require('../dao/user');
 function logon(request,resposn) {
   request.on('data',function (data) {
@@ -45,5 +44,9 @@ function login(request,resposn) {
 }
 userMap.set("login",login);
 
+function getUserId(request,resposn){
+  console.log(request.query);
+}
+userMap.set('getUserId',getUserId);
 
 module.exports = userMap;

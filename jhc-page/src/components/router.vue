@@ -1,19 +1,13 @@
 <template>
   <el-row class="router">
     <el-col :span="20">
-      <el-menu class="el-menu-demo" mode="horizontal" active-text-color="#f40" text-color="#000">
-        <el-menu-item>
-          <router-link :to="{path:'/home'}">首页</router-link>
-        </el-menu-item>
-        <el-menu-item>
-          <router-link :to="{path:'/document'}">测试接口</router-link>
-        </el-menu-item>
-        <el-menu-item disabled>
-          <router-link to="{path:'/'}">学习论坛</router-link>
-        </el-menu-item>
-        <el-menu-item>
-          <router-link :to="{path:'/about'}">开发者</router-link>
-        </el-menu-item>
+      <el-menu class="el-menu-demo" mode="horizontal" 
+				:default-active="$route.path"
+				text-color="#000" router>
+        <el-menu-item index="/home">首页</el-menu-item>
+        <el-menu-item index="/document/interface">测试接口</el-menu-item>
+        <el-menu-item disabled>学习论坛</el-menu-item>
+        <el-menu-item index="/About">开发者</el-menu-item>
       </el-menu>
     </el-col>
     <el-col :span="4">
@@ -22,7 +16,7 @@
           <login />
         </el-menu-item>
         <el-menu-item>
-					<resistered />
+          <resistered />
         </el-menu-item>
       </el-menu>
     </el-col>
@@ -30,15 +24,22 @@
 </template>
 
 <script>
-import resistered from './user/registered';
-import login from './user/login';
+import resistered from "./user/registered";
+import login from "./user/login";
 
 export default {
   components: {
     resistered,
-    login,
+    login
   },
+  created() {
+    console.log(this.$router);
+  }
 };
 </script>
-<style lang="scss">
+<style>
+.router-link-exact-active {
+  color: #f40 !important;
+  font-weight: bold;
+}
 </style>

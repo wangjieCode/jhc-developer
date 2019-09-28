@@ -1,5 +1,3 @@
-
-
 import Vue from 'vue';
 import axios from 'axios';
 
@@ -17,10 +15,10 @@ const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
   config =>
-    // Do something before request is sent
+  // Do something before request is sent
     config,
   error =>
-    // Do something with request error
+  // Do something with request error
     Promise.reject(error),
 
 );
@@ -28,10 +26,10 @@ _axios.interceptors.request.use(
 // Add a response interceptor
 _axios.interceptors.response.use(
   response =>
-    // Do something with response data
+  // Do something with response data
     response,
   error =>
-    // Do something with response error
+  // Do something with response error
     Promise.reject(error),
 
 );

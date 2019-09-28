@@ -1,13 +1,62 @@
 <template>
   <div class="home">
-    <h1>欢迎来到jhc开发者平台</h1>
+		<el-row class="my2048">
+			<el-col :span="10">
+				<h1>2048小游戏(点击游戏界面开始游戏)</h1>
+			</el-col>
+			<el-col 
+			>
+					<iframe 
+						class="iframe" 
+						src="https://developer.duyiedu.com/My2048/index.html" frameborder="0"></iframe>
+			</el-col>
+			
+		</el-row>
+		<!-- <el-button @click="click">打开登陆</el-button> -->
   </div>
 </template>
 
 <script>
-
+// import {map}
 export default {
   name: 'home',
-  components: {},
+	components: {},
+	data() {
+		return {
+			start:true
+		}
+	},
+	methods:{
+		click(){
+			this.$store.state.dialogFormVisible = true;
+			console.log(this.$store.state.dialogFormVisible)
+		},
+		mmpclick(){
+			// this.start = false;
+			console.log(this.start)
+		}
+	}
 };
 </script>
+<style lang="scss">
+.home {
+  // display: flex;
+  // justify-content: center;
+  // align-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  // height: 500px;
+}
+.my2048{
+	padding: 70px;
+}
+.iframe{
+	width: 100%;
+	height: 500px;
+	padding-top: 30px;
+	border: 1px solid;
+}
+.el-loading-spinner{
+	color: #fff !important; 
+}
+</style>
