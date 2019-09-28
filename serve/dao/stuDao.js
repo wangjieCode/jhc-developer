@@ -6,15 +6,34 @@ function daoQueryAll(success,fail,userId) {
 	.catch(rej => fail(rej))
 }
 
-function daoDddStu(success, fail, userId) {
-	let sql = userId == undefined ? 'insert into student (id,name,sex,edu,email,address) values (20180101,王杰,0,本科,1787612871@qq.com,山西长治 )' : `select * from ${userId}`;
-	console.log(sql)
-	writeData(sql).then(res => console.log(JSON.stringify(res)))
-		.catch(rej => console.log(rej))
+function daoDddStu(userInfo,success, fail) {
+	const { id , name , sex , email, address, edu} = userInfo;
+	let sql = `insert into student (id,name,sex,edu,email,address) values (?,?,?,?,?,?)`;
+	writeData(sql,id,name,sex,email,address,edu ).then(res => success(res))
+		.catch(rej => fail(rej))
 }
-daoDddStu()
+// daoDddStu(null,function (res) {
+// 	console.log(res)
+// }, function (rej) {
+// 	console.log(rej)
+// } );
+
+
+
+function editStu(id,success,fail) {
+	let sql = `delete from student where id = ${id};`
+	writeData(sql).then(res => success(res))
+		.catch(rej => fail(rej))
+}
+
+function changeStu(id,success,fail) {
+	const sql = '';
+	writeData(sql, id).then(res => success(res))
+		.catch(rej => fail(rej))
+}
 
 module.exports = {
 		daoQueryAll,
-		daoDddStu
+		daoDddStu,
+		editStu
 };
