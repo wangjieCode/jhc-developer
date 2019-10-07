@@ -1,5 +1,13 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+		<article-edit />
   </div>
 </template>
+<script>
+import ArticleEdit from '@/components/userArticle/articleEdit'
+export default {
+	components:{
+		ArticleEdit
+	}
+}
+</script>

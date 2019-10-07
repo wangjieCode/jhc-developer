@@ -1,7 +1,7 @@
 <template>
   <el-row class="router">
     <el-col :span="20">
-      <el-menu class="el-menu-demo" mode="horizontal" 
+      <el-menu  mode="horizontal" 
 				:default-active="$route.path"
 				text-color="#000" router>
         <el-menu-item index="/home">首页</el-menu-item>
@@ -11,7 +11,7 @@
       </el-menu>
     </el-col>
     <el-col :span="4">
-      <el-menu class="el-menu-demo" mode="horizontal">
+      <el-menu  mode="horizontal">
         <el-menu-item>
           <login />
         </el-menu-item>
@@ -33,11 +33,11 @@ export default {
     login
   },
   created() {
-    console.log(this.$router);
+    // console.log(this.$router);
   }
 };
 </script>
-<style>
+<style less="scss">
 .router-link-exact-active {
   color: #f40 !important;
   font-weight: bold;

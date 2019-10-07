@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header class="header">
+			<h1 style="margin:20px auto 0px">jhc开发者平台</h1>
+      <el-header style="height:80px">
         <router />
       </el-header>
       <router-view />
@@ -17,14 +18,6 @@ export default {
   components: {
     router,
 	},
-	mounted(){
-		window.addEventListener('hashchange',()=>{
-        var currentPath = window.location.hash.slice(1); // 获取输入的路由
-        if(this.$router.path !== currentPath){
-            this.$router.push(currentPath); // 动态跳转
-        }
-    },false);
-	},
 	beforeCreate(){
 		this.$notify({
 			title: '提示',
@@ -33,6 +26,7 @@ export default {
 			position:'bottom-right',
 			offset:100
 		});
+		// this.$router.push('home');
 	}
 };
 </script>

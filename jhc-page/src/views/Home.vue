@@ -39,16 +39,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.home {
-  // display: flex;
-  // justify-content: center;
-  // align-content: center;
-  // align-items: center;
-  // flex-direction: column;
-  // height: 500px;
-}
 .my2048{
-	padding: 70px;
 }
 .iframe{
 	width: 100%;
