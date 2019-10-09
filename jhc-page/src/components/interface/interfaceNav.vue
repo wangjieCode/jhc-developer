@@ -12,17 +12,17 @@
 <script>
 export default {
   data() {
-		return {
-			
-		}
-	},
-	methods:{
-		click(){
-			this.$message({
-				message: "当前接口还未开发完成敬请期待"
-			})
-		}
-	}
+    return {
+
+    };
+  },
+  methods: {
+    click() {
+      this.$message({
+        message: '当前接口还未开发完成敬请期待',
+      });
+    },
+  },
 };
 </script>
 

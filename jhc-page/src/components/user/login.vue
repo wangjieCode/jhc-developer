@@ -13,21 +13,21 @@ import jhcFrom from './jhcFrom';
 export default {
   data() {
     return {
-			mmpthis: this,
+      mmpthis: this,
 			 dialogFormVisible: this.$store.state.dialogFormVisible,
 			 user: {
         userName: '',
         password: '',
       },
     };
-	},
-	created(){
-		console.log(this.$store.state.dialogFormVisible)
-	},
+  },
+  created() {
+    console.log(this.$store.state.dialogFormVisible);
+  },
   methods: {
-		click(){
-			this.$store.state.dialogFormVisible
-		},
+    click() {
+      this.$store.state.dialogFormVisible;
+    },
     login() {
       const { password, userName } = this.user;
 

@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import interFace from "@/components/interface/interfaceNav";
+import interFace from '@/components/interface/interfaceNav';
 
 export default {
   components: {
-    interFace
-  }
+    interFace,
+  },
 };
 </script>
 <style>

@@ -20,8 +20,8 @@ export default new Router({
   {
     path: '/document',
     name: 'document',
-		component: () => import('./views/document.vue'),
-		redirect: '/document/interface',
+    component: () => import('./views/document.vue'),
+    redirect: '/document/interface',
     children: [{
       path: 'interface',
       name: 'interface',
@@ -32,21 +32,25 @@ export default new Router({
     path: '/registered',
     name: 'registered',
     component: () => import('./components/user/registered.vue'),
-	},
-	{
-		path: '/notFound',
-		name: 'notFound',
-		component: () => import('./views/notFound.vue'),
-	},
+  },
+  {
+    path: '/notFound',
+    name: 'notFound',
+    component: () => import('./views/notFound.vue'),
+  },
+  {
+	  path: '/learnCenter',
+	  name: 'learnCenter',
+	  component: () => import('./views/learnCenter.vue'),
+  },
   {
     path: '*',
-    redirect:function (to) {
-			if(to.path === '/'){
-				return '/home';
-			}else{
-				return '/notFound';
-			}
-    }
+    redirect(to) {
+      if (to.path === '/') {
+        return '/home';
+      }
+      return '/notFound';
+    },
   },
   ],
 });

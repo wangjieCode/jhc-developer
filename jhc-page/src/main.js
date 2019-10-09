@@ -10,7 +10,7 @@ import store from './store';
 // router.beforeEach( (to,from,next) => {
 // 	console.log(to)
 // 	if (to.fullPath !== "/document/interface") {
-// 		next()		
+// 		next()
 // 		console.log("mm")
 // 	}
 // })

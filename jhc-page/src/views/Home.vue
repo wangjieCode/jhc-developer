@@ -4,13 +4,13 @@
 			<el-col :span="10">
 				<h1>2048小游戏(点击游戏界面开始游戏)</h1>
 			</el-col>
-			<el-col 
+			<el-col
 			>
-					<iframe 
-						class="iframe" 
+					<iframe
+						class="iframe"
 						src="https://developer.duyiedu.com/My2048/index.html" frameborder="0"></iframe>
 			</el-col>
-			
+
 		</el-row>
 		<!-- <el-button @click="click">打开登陆</el-button> -->
   </div>
@@ -20,22 +20,22 @@
 // import {map}
 export default {
   name: 'home',
-	components: {},
-	data() {
-		return {
-			start:true
-		}
-	},
-	methods:{
-		click(){
-			this.$store.state.dialogFormVisible = true;
-			console.log(this.$store.state.dialogFormVisible)
-		},
-		mmpclick(){
-			// this.start = false;
-			console.log(this.start)
-		}
-	}
+  components: {},
+  data() {
+    return {
+      start: true,
+    };
+  },
+  methods: {
+    click() {
+      this.$store.state.dialogFormVisible = true;
+      console.log(this.$store.state.dialogFormVisible);
+    },
+    mmpclick() {
+      // this.start = false;
+      console.log(this.start);
+    },
+  },
 };
 </script>
 <style lang="scss">
@@ -48,6 +48,6 @@ export default {
 	border: 1px solid;
 }
 .el-loading-spinner{
-	color: #fff !important; 
+	color: #fff !important;
 }
 </style>

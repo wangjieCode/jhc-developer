@@ -4,10 +4,11 @@
   </div>
 </template>
 <script>
-import ArticleEdit from '@/components/userArticle/articleEdit'
+import ArticleEdit from '@/components/userArticle/articleEdit';
+
 export default {
-	components:{
-		ArticleEdit
-	}
-}
+  components: {
+    ArticleEdit,
+  },
+};
 </script>

@@ -17,17 +17,17 @@ export default {
   name: 'app',
   components: {
     router,
-	},
-	beforeCreate(){
-		this.$notify({
-			title: '提示',
-			message: '当前平台还未开发完成敬请期待',
-			type: 'warning',
-			position:'bottom-right',
-			offset:100
-		});
-		// this.$router.push('home');
-	}
+  },
+  beforeCreate() {
+    this.$notify({
+      title: '提示',
+      message: '当前平台还未开发完成敬请期待',
+      type: 'warning',
+      position: 'bottom-right',
+      offset: 100,
+    });
+    this.$router.push('home');
+  },
 };
 </script>
 
