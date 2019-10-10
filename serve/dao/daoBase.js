@@ -5,7 +5,11 @@ function changeDataBase(querysql, ...value) {
 		const read = connect.createConnect();
 		read.connect();
 		read.query(querysql, value, function (err, result) {
-			typeof err !== "object" ? resolve(result) : reject(err);
+			if(err) {
+				reject(err);
+			} else{
+				resolve(result);
+			}
 		});
 		read.end();
 	})
