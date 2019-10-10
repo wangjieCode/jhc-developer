@@ -26,7 +26,7 @@ export default {
       position: 'bottom-right',
       offset: 100,
     });
-    this.$router.push('home');
+    // this.$router.push('home');
   },
 };
 </script>

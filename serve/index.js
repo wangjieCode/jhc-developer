@@ -19,6 +19,9 @@ app.post('/stu/addStu', loader.get('stu/addStu'));
 app.get('/stu/editStu', loader.get('stu/editStu'));
 app.post('/stu/changeStu', loader.get('stu/changeStu'));
 
+app.post('/sys/editArticle', loader.get('sys/editArticle'));
+
+
 app.listen(90,function () {
 	console.log("服务已启动");
 });

@@ -2,7 +2,7 @@
   <div :article="article" class="Article">
     <el-row>
       <el-col class="article-left" :span="20">
-        <div class="chooseclass">专栏</div>
+        <div class="chooseclass">专栝</div>
         <el-link icon="el-icon-view">{{ article.title }}</el-link>
         <div class="fenxiang">
           <div>
@@ -12,7 +12,7 @@
         </div>
       </el-col>
       <el-col :span="4">
-        <el-image style="padding-left: 30px; width: 100px; height: 100px" :src="url" :fit="fit"></el-image>
+        <el-image style="padding-left: 30px; width: 100px; height: 100px"></el-image>
       </el-col>
     </el-row>
   </div>

@@ -5,28 +5,28 @@
       :value="value"
       :defaultOpen="'preview'"
       :ishljs="true"
-			@change="change"
-			fontSize="20px"
+      @change="change"
+      fontSize="20px"
     ></mavon-editor>
-		<div class="art">
-			<el-button @click="setArticleStorage" type="primary">保存</el-button>
-			<el-button type="success">发布</el-button>
-		</div>
+    <div class="art">
+      <el-button @click="setArticleStorage" type="primary">保存</el-button>
+      <el-button @click="submit" type="success">发布</el-button>
+    </div>
   </div>
 </template>
 
 <script>
-import { mavonEditor } from 'mavon-editor';
-import 'mavon-editor/dist/css/index.css';
+import { mavonEditor } from "mavon-editor";
+import "mavon-editor/dist/css/index.css";
 
 export default {
   components: {
-    mavonEditor,
+    mavonEditor
   },
   data() {
     return {
-      value: '# 使用md语法分享文章',
-      tempValue: '',
+      value: "# 使用md语法分享文章",
+      tempValue: ""
     };
   },
   methods: {
@@ -36,24 +36,42 @@ export default {
     },
     setArticleStorage() {
       console.log(this.tempValue);
-      localStorage.setItem('article', this.tempValue);
+      localStorage.setItem("article", this.tempValue);
     },
-  },
+    submit() {
+      axios
+        .post("/sys/editArticle", {
+          article: this.tempValue,
+					user: document.cookie.split("=")[1],
+					time: this.getTime()
+        })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(rej => {
+          console.log(rej);
+        });
+    },
+    getTime() {
+      const oDate = new Date(); //实例一个时间对象；
+      return ''+ oDate.getFullYear() + (oDate.getMonth() + 1) + oDate.getDate() + oDate.getHours();
+    }
+  }
 };
 </script>
 
 <style lang="scss" scope>
 .md {
   box-sizing: border-box;
-	padding: 30px;
-	height: 500px;
+  padding: 30px;
+  height: 500px;
 }
 .art {
-	display: flex;
-	justify-content: space-around;
-	padding-top: 20px;
-	.el-button{
-		flex: 1;
-	}
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  .el-button {
+    flex: 1;
+  }
 }
 </style>

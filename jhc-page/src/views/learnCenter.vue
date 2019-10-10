@@ -17,7 +17,9 @@ import ArticleList from '@/components/learn/ArticleList';
 export default {
   components: {
     ArticleList,
-  },
+	},
+	mounted(){
+	},
   data() {
     return {
       article: [
