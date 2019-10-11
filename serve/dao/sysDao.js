@@ -17,6 +17,15 @@ function daogetAllArticle(success,fail,from, to){
 		fail(rej);
 	})
 }
+function getArticleById(id,success, fail){
+	const sql = `select  * from article where id = ?`;
+	readDatabase(sql, id).then( res => {
+		success(res);
+	}).catch( rej => {
+		fail(rej);
+	})
+}
+
 // editArticle(m, function (result) {
 // 	console.log(result)
 // },function (err) {
@@ -24,5 +33,6 @@ function daogetAllArticle(success,fail,from, to){
 // })
 module.exports = {
 	editArticle,
-	daogetAllArticle
+	daogetAllArticle,
+	getArticleById
 };

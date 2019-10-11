@@ -2,11 +2,12 @@ const mysql = require('mysql');
 
 function createConnect(){
     return mysql.createConnection({
-        host:"127.0.0.1",
+        host:"116.62.237.64",
         port:"3306",
         user:"root",
-        password:"wj123456",
+        password:"",
         database:"jhc_dev"
     });
 }
+// console.log(createConnect());
 module.exports.createConnect = createConnect;
