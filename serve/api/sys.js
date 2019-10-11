@@ -16,9 +16,13 @@ sysMap.set('sys/editArticle', editArticle);
 
 function getArticleAll(request, resposn){
 	sysDao.daogetAllArticle(function (result) {
-		console.log(result)
+		const temp = JSON.stringify(result);
+		console.log(temp);
+		resposn.write(temp);
+		resposn.end();
 	}, function (err) {
-		resposn.end('fail')
+		console.log(err);
+		resposn.end('fail');
 	})
 }
 

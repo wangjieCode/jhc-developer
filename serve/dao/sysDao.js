@@ -10,7 +10,7 @@ function editArticle(data,success, fail) {
 }
 
 function daogetAllArticle(success,fail,from, to){
-	const sql = 'select  * from article;'
+	const sql = 'select  * from article;';
 	readDatabase(sql).then( res => {
 		success(res);
 	}).catch( rej => {

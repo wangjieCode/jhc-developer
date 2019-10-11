@@ -29,7 +29,7 @@ app.post('/stu/changeStu', loader.get('stu/changeStu'));
 * 	文章相关
 * */
 app.post('/sys/editArticle', loader.get('sys/editArticle'));
-app.get('/sys/getArticle', loader.get('sys/getArticle'));
+app.get('/sys/getArticleAll', loader.get('sys/getArticleAll'));
 
 
 app.listen(90,function () {
