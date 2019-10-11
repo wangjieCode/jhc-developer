@@ -38,6 +38,7 @@ export default {
   border-bottom: 0.5px solid #ccc;
   height: 130px;
   padding: 20px 50px;
+	background-color: #fff;
   box-sizing: border-box;
   .fenxiang {
     display: flex;

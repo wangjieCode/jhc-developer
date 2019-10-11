@@ -23,19 +23,31 @@ export default {
   },
   methods: {
     showLogin() {
-			this.$store.state.dialogFormVisible = true;
-		},
+      this.$store.state.dialogFormVisible = true;
+    },
+    hideLogin() {
+      this.$store.state.dialogFormVisible = false;
+    },
     login() {
       const { password, userName } = this.user;
-
-      this.setCookie(userName);
-      // axios
-      //   .post('/login', {
-      //     userName,
-      //     password,
-      //   })
-      //   .then(e => console.log(e))
-      //   .catch(err => console.log(err));
+      axios
+        .post("/login", {
+          userName,
+          password
+        })
+        .then(e => {
+          this.$message({
+            message: "登陆成功",
+            type: "success"
+          });
+          this.setCookie(userName);
+          this.hideLogin();
+          this.$store.state.loginFlag = false;
+        })
+        .catch(err => {
+					console.log("密码或用户名错误");
+					this.$message.error('用户名或密码错误');
+        });
     },
     setCookie(user) {
       document.cookie = `login=${user};expires=Sun Apr 29 2020 14:27:56 GMT+0800 (中国标准时间)`;

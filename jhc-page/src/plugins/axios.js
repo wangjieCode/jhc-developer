@@ -7,7 +7,7 @@ import axios from 'axios';
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 const config = {
-  // baseURL: 'http://localhost:90',
+  baseURL: 'http://116.62.237.64',
   // timeout: 60 * 1000, // Timeout
 };
 

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <el-container>
-			<h1 style="margin:20px auto 0px">jhc开发者平台</h1>
+    <el-container style="margin: 20px auto">
       <el-header style="height:80px">
         <router />
       </el-header>

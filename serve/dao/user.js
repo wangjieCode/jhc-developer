@@ -4,28 +4,28 @@ const { writeData,readDatabase } = require('./daoBase');
 function logon(username,password,success,fail) {
     const sql = `insert into user (usename,password) values (?,?)`;
     const parms = [username,password];
-    // writeData(sql,username,password).then( result => success(result) )
-    //     .catch( err => fail(err) );
-    const tempId = rander();
-    const setuserID = `insert into user2table (user,userId) values (?,?)`;
+    writeData(sql,username,password).then( result => success(result) )
+        .catch( err => fail(err) );
+    // const tempId = rander();
+    // const setuserID = `insert into user2table (user,userId) values (?,?)`;
     // writeData(setuserID,username,tempId).then(res => console.log(res))
     //     .catch( rej => console.log(rej))
-    setTimeout(_ => {
-        const sql = `CREATE TABLE \`jhc_dev\`.\`?\` (
-                      \`id\` INT NOT NULL,
-                      \`name\` VARCHAR(5) NOT NULL,
-                      \`sex\` TINYINT NOT NULL,
-                      \`edu\` VARCHAR(45) NOT NULL,
-                      \`email\` VARCHAR(45) NOT NULL,
-                      \`address\` VARCHAR(45) NOT NULL,
-                      PRIMARY KEY (\`id\`),
-                      UNIQUE INDEX \`id_UNIQUE\` (\`id\` ASC))
-                    ENGINE = InnoDB
-                    DEFAULT CHARACTER SET = utf8
-                    COLLATE = utf8_bin;`
-        writeData(sql,tempId).then(res => console.log(res))
-            .catch( rej => console.log(rej))
-    },1000)
+    // setTimeout(_ => {
+    //     const sql = `CREATE TABLE \`jhc_dev\`.\`?\` (
+    //                   \`id\` INT NOT NULL,
+    //                   \`name\` VARCHAR(5) NOT NULL,
+    //                   \`sex\` TINYINT NOT NULL,
+    //                   \`edu\` VARCHAR(45) NOT NULL,
+    //                   \`email\` VARCHAR(45) NOT NULL,
+    //                   \`address\` VARCHAR(45) NOT NULL,
+    //                   PRIMARY KEY (\`id\`),
+    //                   UNIQUE INDEX \`id_UNIQUE\` (\`id\` ASC))
+    //                 ENGINE = InnoDB
+    //                 DEFAULT CHARACTER SET = utf8
+    //                 COLLATE = utf8_bin;`
+    //     writeData(sql,tempId).then(res => console.log(res))
+    //         .catch( rej => console.log(rej))
+    // },1000)
 }
 // logon();
 function login(username,success,fail) {

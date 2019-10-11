@@ -24,9 +24,9 @@ export default {
   },
   methods: {
     fun() {
+			console.log('mmp')
       const { password, userName } = this.user;
-      axios
-        .post('/logon', {
+      axios.post('/logon', {
           userName,
           password,
         })

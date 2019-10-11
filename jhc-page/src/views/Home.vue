@@ -1,27 +1,6 @@
 <template>
   <div class="home">
-    <el-row class="my2048">
-      <el-col :span="10">
-        <h1>2048小游戏(点击游戏界面开始游戏)</h1>
-      </el-col>
-      <el-col>
-        <iframe
-          class="iframe"
-          src="https://developer.duyiedu.com/My2048/index.html"
-          frameborder="0"
-        ></iframe>
-      </el-col>
-      <el-col :span="10">
-        <h1>连连看小游戏(点击游戏界面开始游戏)</h1>
-      </el-col>
-      <el-col>
-        <iframe
-          class="iframe"
-          src="https://developer.duyiedu.com/PopStar/index.html"
-          frameborder="0"
-        ></iframe>
-      </el-col>
-    </el-row>
+    首页
     <!-- <el-button @click="click">打开登陆</el-button> -->
   </div>
 </template>
