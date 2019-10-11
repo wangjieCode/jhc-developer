@@ -2,6 +2,8 @@ const express = require('express');
 const loader = require("./loader");
 
 const app = new express();
+
+app.use(express.static("./dist/"));
 /*
 * 	设置跨域访问
 * */
@@ -30,8 +32,8 @@ app.post('/stu/changeStu', loader.get('stu/changeStu'));
 * */
 app.post('/sys/editArticle', loader.get('sys/editArticle'));
 app.get('/sys/getArticleAll', loader.get('sys/getArticleAll'));
+app.get('/sys/getArticle', loader.get('sys/getArticle'));
 
-
-app.listen(90,function () {
+app.listen(80,function () {
 	console.log("服务已启动");
 });
