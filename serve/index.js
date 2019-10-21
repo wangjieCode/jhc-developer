@@ -10,7 +10,8 @@ app.use(express.static("./dist/"));
 app.all('*', function(req, res, next) {
 	res.header("Access-Control-Allow-Credentials","true");  //服务端允许携带cookie
 	res.header(	"Access-Control-Allow-Origin", "*");  //允许的访问域
-	res.header(	"Access-Control-Allow-Headers", "*");  //允许的访问域
+	res.header(	"Access-Control-Allow-Headers", "content-type, x-requested--width");
+	res.header("Access-Control-Allow-Methods", "*"); 
 	res.header("Access-Control-Allow-Headers");
 	next();
 });
@@ -37,3 +38,4 @@ app.get('/sys/getArticle', loader.get('sys/getArticle'));
 app.listen(80,function () {
 	console.log("服务已启动");
 });
+

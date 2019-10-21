@@ -1,5 +1,14 @@
+const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
 	productionSourceMap: false,
+	configureWebpack:  {
+		externals: {
+			"Vue": "Vue",
+			"axios": "axios",
+			"Vuex": "Vuex",
+			"VueRouter": "VueRouter",
+		}
+	},
 	pages: {
 	  index: {
 	    entry: 'src/main.js',

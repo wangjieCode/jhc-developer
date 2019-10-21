@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <el-container style="margin: 20px auto">
-      <el-header style="height:80px">
+    <el-container >
+			<h2 style="margin: 20px auto 20px">jhc开发者中心</h2>
+      <el-header  style="height:80px">
         <router />
       </el-header>
       <router-view />
@@ -34,5 +35,16 @@ export default {
 #app {
   width: 1200px;
   margin: 0 auto;
+}
+@media screen and (min-width:980px ) {
+	#app {
+		width: 1200px;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width:500px ){
+	#app {
+		width: 600px;
+	}
 }
 </style>

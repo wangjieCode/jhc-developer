@@ -7,7 +7,6 @@
       :defaultOpen="'preview'"
       :toolbarsFlag="false"
       :editable="false"
-      :scrollStyle="true"
       :ishljs="true"
     ></mavon-editor>
   </div>
@@ -45,10 +44,17 @@ export default {
 };
 </script>
 <style lang="scss">
-#article {
-  width: 1200px;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding-left: 30px;
+@media screen and (min-width:980px ) {
+		#article {
+		width: 1200px;
+		margin: 0 auto;
+		margin-top: 30px;
+		padding-left: 30px;
+	}
+}
+@media screen and (max-width:500px ){
+	#article {
+		width: 100%;
+	}
 }
 </style>

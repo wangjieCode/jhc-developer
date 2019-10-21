@@ -1,6 +1,5 @@
 <template>
   <div class="interface" style="width: 100%;">
-    接口中心
     <mavon-editor
       class="md"
       :value="value"
@@ -13,7 +12,6 @@
     ></mavon-editor>
   </div>
 </template>
-
 <script>
 import { mavonEditor } from 'mavon-editor';
 import 'mavon-editor/dist/css/index.css';
@@ -26,7 +24,7 @@ export default {
     return {
       value: `# 学生信息管理系统后端接口
 ## 一 基础说明
-> 基础域名 www.jhc-dev.cn/
+> 基础域名 http://116.62.237.64/
 > 
 |字段|类型|是否必须|备注|
 |:-: |:-: |:-: |:-: | 

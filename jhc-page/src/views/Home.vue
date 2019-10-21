@@ -1,18 +1,81 @@
 <template>
   <div class="home">
-    首页
-    <!-- <el-button @click="click">打开登陆</el-button> -->
+    <el-row :gutter="30" style="padding: 0 30px;">
+			<el-col :span="12">
+				<el-card class="dome-list" :body-style="{ padding: '0px' }">
+					<div>
+						<img src="@/assets/img/照片展示.png" alt="">
+					</div>
+					<div class="info">
+						<el-link target="_blank" href="https://developer.duyiedu.com/PhotographsShow/index.html">在线试玩</el-link>
+					</div>
+				</el-card>		
+			</el-col>
+			<!-- <dome-List :imgUrl="img"/> -->
+			<el-col :span="12">
+				<el-card class="dome-list" :body-style="{ padding: '0px' }">
+					<div>
+						<img src="@/assets/img/翻书.png" alt="">
+					</div>
+					<div class="info">
+						<el-link target="_blank" href="https://developer.duyiedu.com/PageTurning/index.html">在线试玩</el-link>
+					</div>
+				</el-card>		
+			</el-col>
+		</el-row>
+		 <el-row :gutter="30" style="padding: 0 30px;">
+			<el-col :span="12">
+				<el-card class="dome-list" :body-style="{ padding: '0px' }">
+					<div>
+						<img src="@/assets/img/文字时钟.png" alt="">
+					</div>
+					<div class="info">
+						<el-link target="_blank" href="https://developer.duyiedu.com/clock/index.html">在线试玩</el-link>
+					</div>
+				</el-card>		
+			</el-col>
+			<!-- <dome-List :imgUrl="img"/> -->
+			<el-col :span="12">
+				<el-card class="dome-list" :body-style="{ padding: '0px' }">
+					<div>
+						<img src="@/assets/img/2048.png" alt="">
+					</div>
+					<div class="info">
+						<el-link target="_blank" href="https://developer.duyiedu.com/My2048/index.html">在线试玩</el-link>
+					</div>
+				</el-card>		
+			</el-col>
+		</el-row>
+		 <el-row :gutter="30" style="padding: 0 30px;">
+			<el-col :span="12">
+				<el-card class="dome-list" :body-style="{ padding: '0px' }">
+					<div>
+						<img src="@/assets/img/消灭星星.png" alt="">
+					</div>
+					<div class="info">
+						<el-link target="_blank" href="https://developer.duyiedu.com/PopStar/index.html">在线试玩</el-link>
+					</div>
+				</el-card>		
+			</el-col>
+		</el-row>
   </div>
 </template>
 
 <script>
-// import {map}
+import domeList from '@/components/showlist/domelist'
 export default {
   name: "home",
-  components: {},
+  components: {
+		domeList
+	},
   data() {
     return {
-      start: true
+			start: true,
+			img:'@/assets/img/2048.png',
+			domelist:{
+				imgUrl: '@/assets/img/2048.png',
+				url: ''
+			}
     };
   },
   mounted() {
@@ -33,7 +96,8 @@ export default {
 };
 </script>
 <style lang="scss">
-.my2048 {
+.el-row{
+	margin-bottom: 30px;
 }
 .iframe {
   width: 100%;

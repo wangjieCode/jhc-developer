@@ -1,11 +1,11 @@
 <template>
   <el-row class="router">
-    <el-col :span="20">
+    <el-col :span="20" type="flex">
       <el-menu mode="horizontal" :default-active="$route.path" text-color="#000" router>
-        <el-menu-item index="/home">首页</el-menu-item>
+        <el-menu-item index="/home">经典案例</el-menu-item>
         <el-menu-item index="/document/interface">测试接口</el-menu-item>
         <el-menu-item index="/learnCenter">学习论坛</el-menu-item>
-        <el-menu-item index="/About">开发者</el-menu-item>
+        <el-menu-item index="/About">发布文章</el-menu-item>
       </el-menu>
     </el-col>
     <el-col class="loginFlag" :span="4">
@@ -52,6 +52,9 @@ export default {
 };
 </script>
 <style less="scss">
+.el-header{
+	padding: 0;
+}
 .loginFlag {
   display: flex;
   background-color: #fff;
@@ -65,6 +68,7 @@ export default {
 	align-items: center;
 }
 .router {
+	padding: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
