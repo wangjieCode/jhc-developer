@@ -5,6 +5,14 @@
     <br />
     <br />
     <a @click="click">在线聊天接口</a>
+		<br />
+    <br />
+    <br />
+		<a @click="click">天气查询接口</a>
+		<br />
+    <br />
+    <br />
+		<a @click="click">百度搜索原理</a>
   </el-col>
 </template>
 
@@ -28,7 +36,7 @@ export default {
 
 <style lang="scss">
 .jhc-nav {
-  width: 200px;
+	width: 200px;
   text-align: center;
   padding: 20px 0px;
   font-weight: bold;

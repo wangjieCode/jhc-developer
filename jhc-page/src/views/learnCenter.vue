@@ -1,14 +1,11 @@
 <template>
 	<el-row class="learnCrenter">
-		<el-col :span=18>
+		<el-col style="margin: 0 0 20px 0">
 			<template v-for="item in article">
 					<article-list :key="item.key" :article="item" />
 			</template>
 		</el-col>
-		<el-col class="learnClass" :span=6>
-			mmp
-			<!-- <article-list /> -->
-		</el-col>
+		
 	</el-row>
 </template>
 <script>

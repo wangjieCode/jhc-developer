@@ -1,4 +1,4 @@
 function niLink(head) {
 
 }
-console.log('mmp')
+console.log('mmp');

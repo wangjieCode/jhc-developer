@@ -26,14 +26,23 @@ function editStu(id,success,fail) {
 		.catch(rej => fail(rej))
 }
 
-function changeStu(id,success,fail) {
-	const sql = '';
-	writeData(sql, id).then(res => success(res))
-		.catch(rej => fail(rej))
+function changeStu(data,success,fail) {
+	const sql = createChangeSql(data);
+	writeData(sql).then(res => success(res))
+		.catch(rej => fail(rej));
+}
+function createChangeSql(data){
+	let baseSql = `update student set `;
+	for( prop in data){
+		if(prop == 'id') continue;
+		baseSql += `${prop}='${data[prop]}',`
+	}
+	return baseSql.slice(0,baseSql.length-1)  + ` where id=${data.id}`;
 }
 
 module.exports = {
 		daoQueryAll,
 		daoDddStu,
-		editStu
+		editStu,
+		changeStu
 };

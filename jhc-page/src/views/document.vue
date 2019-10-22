@@ -1,7 +1,7 @@
 <template>
   <div class="jhc-document">
     <el-container>
-      <el-aside width="200px">
+      <el-aside width=200 class="module-nav">
         <inter-face />
       </el-aside>
     	<router-view></router-view>
@@ -19,4 +19,9 @@ export default {
 };
 </script>
 <style>
+@media screen and (max-width:500px ){
+	.module-nav{
+		display: none;
+	}
+}
 </style>

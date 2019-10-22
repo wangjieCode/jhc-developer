@@ -1,6 +1,6 @@
 <template>
   <el-row class="router">
-    <el-col :span="20" type="flex">
+    <el-col class="menu" :span="20" type="flex">
       <el-menu mode="horizontal" :default-active="$route.path" text-color="#000" router>
         <el-menu-item index="/home">经典案例</el-menu-item>
         <el-menu-item index="/document/interface">测试接口</el-menu-item>
@@ -86,4 +86,10 @@ export default {
 .span {
   padding-left: 20px;
 }
+@media screen and (max-width:500px ){
+	/* .menu{
+		width: 500px;
+	} */
+}
+
 </style>

@@ -1,4 +1,4 @@
-// import Vue from 'vue';
+import Vue from 'vue';
 import './plugins/axios';
 import Element from 'element-ui';
 import App from './App.vue';

@@ -13,6 +13,7 @@ app.all('*', function(req, res, next) {
 	res.header(	"Access-Control-Allow-Headers", "content-type, x-requested--width");
 	res.header("Access-Control-Allow-Methods", "*"); 
 	res.header("Access-Control-Allow-Headers");
+	res.header({"content-type":"text/html;charset=UTF-8"});
 	next();
 });
 /*
@@ -35,7 +36,12 @@ app.post('/sys/editArticle', loader.get('sys/editArticle'));
 app.get('/sys/getArticleAll', loader.get('sys/getArticleAll'));
 app.get('/sys/getArticle', loader.get('sys/getArticle'));
 
-app.listen(80,function () {
+/**
+ * 接口文档相关
+ */
+app.get('/doc/query', loader.get('doc/queryID'));
+
+
+app.listen(90,function () {
 	console.log("服务已启动");
 });
-

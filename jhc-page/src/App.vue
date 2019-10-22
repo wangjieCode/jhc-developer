@@ -17,7 +17,7 @@ export default {
   name: 'app',
   components: {
     router,
-  },
+	},
   beforeCreate() {
     this.$notify({
       title: '提示',
@@ -27,7 +27,21 @@ export default {
       offset: 100,
     });
     // this.$router.push('home');
-  },
+	},
+	// mounted(){
+	// 	axios.post('http://127.0.0.1:90/stu/changeStu',{
+	// 		id: 212,
+	// 		name: '陈啸掭',
+	// 		email:'128837218@qq.com',
+	// 		address:'玩的',
+	// 		edu: '博士',
+	// 		sex:0
+	// 	})
+	// 	// axios.get('http://127.0.0.1:90/stu/editStu?id=211312892')
+	// 	.then( res => {
+	// 		console.log(res);
+	// 	}).catch(rej=> console.log(rej))
+	// }
 };
 </script>
 
@@ -44,7 +58,7 @@ export default {
 }
 @media screen and (max-width:500px ){
 	#app {
-		width: 600px;
+		width: 500px;
 	}
 }
 </style>

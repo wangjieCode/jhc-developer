@@ -1,12 +1,12 @@
 <template>
   <div class="edit">
     <mavon-editor
-      class="md"
+			style="height: 600px"
+      class="md-user"
       :value="value"
-      :defaultOpen="'preview'"
-      :ishljs="true"
       @change="change"
       fontSize="20px"
+			placeholder="使用markdown语法分享文章"
     ></mavon-editor>
     <div class="art">
       <el-button @click="setArticleStorage" type="primary">保存</el-button>
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      value: "# 使用md语法分享文章",
+      value: "",
 			tempValue: "",
 			typeEmen: '前端',
 			typeEmenList: [
@@ -85,11 +85,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
-.md {
-  box-sizing: border-box;
-  padding: 30px;
-  height: 500px;
-}
+
 .art {
   display: flex;
   justify-content: space-around;
